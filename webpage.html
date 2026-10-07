@@ -1,0 +1,1564 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Motiva X1 | Unbound</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .brand-logo {
+            width: min(330px, 70vw);
+            max-height: 210px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            margin-left: 25px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #7048e8;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 88vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 100px 8%;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    #eee7ff,
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 15% 80%,
+                    #e4f9ff,
+                    transparent 32%
+                ),
+
+                #ffffff;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .label {
+            display: inline-block;
+
+            padding: 9px 18px;
+
+            border-radius: 50px;
+
+            background: #f2edff;
+
+            color: #7048e8;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 10vw, 120px);
+
+            line-height: 0.9;
+
+            letter-spacing: -7px;
+
+            margin-bottom: 25px;
+        }
+
+        .gradient {
+            background:
+                linear-gradient(
+                    90deg,
+                    #7048e8,
+                    #09a9d6
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .tagline {
+            font-size: 26px;
+
+            color: #7048e8;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 730px;
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+            color: #666;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 16px 30px;
+
+            border-radius: 50px;
+
+            background: #111111;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            margin-right: 10px;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7048e8,
+                    #09a9d6
+                );
+
+            box-shadow:
+                0 15px 35px
+                rgba(112,72,232,0.25);
+        }
+
+        .button-light {
+            background: #f3f3f3;
+            color: #222;
+        }
+
+
+        /* ================= GENERAL ================= */
+
+        .section {
+            padding: 110px 8%;
+        }
+
+        .section-label {
+            color: #7048e8;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 6vw, 65px);
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+        .description {
+            max-width: 760px;
+
+            color: #666;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            margin-bottom: 55px;
+        }
+
+
+        /* ================= PROBLEM ================= */
+
+        .problem-section {
+            background: #fafafa;
+        }
+
+        .problem-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(270px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+        .problem-card {
+            padding: 35px;
+
+            background: white;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.05);
+
+            transition: 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.09);
+        }
+
+        .icon {
+            width: 62px;
+            height: 62px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #f2edff;
+
+            font-size: 29px;
+
+            margin-bottom: 25px;
+        }
+
+        .problem-card h3 {
+            font-size: 23px;
+            margin-bottom: 13px;
+        }
+
+        .problem-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+
+        /* ================= SOLUTION ================= */
+
+        .solution-box {
+            padding: 65px;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2edff,
+                    #eafaff
+                );
+
+            border: 1px solid #e7e7e7;
+        }
+
+        .solution-box h2 {
+            font-size: 45px;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+        .solution-box p {
+            max-width: 800px;
+
+            color: #555;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= HOW IT WORKS ================= */
+
+        .flow-section {
+            background: #111111;
+
+            color: white;
+        }
+
+        .flow-section .section-label {
+            color: #a78bfa;
+        }
+
+        .flow-section .description {
+            color: #aaaaaa;
+        }
+
+        .flow {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(210px, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+        .flow-card {
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            transition: 0.3s;
+        }
+
+        .flow-card:hover {
+            transform: translateY(-7px);
+
+            background:
+                rgba(255,255,255,0.1);
+        }
+
+        .flow-number {
+            color: #a78bfa;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        .flow-card h3 {
+            font-size: 23px;
+
+            margin-bottom: 15px;
+        }
+
+        .flow-card p {
+            color: #aaa;
+
+            line-height: 1.7;
+        }
+
+        .arrow {
+            text-align: center;
+
+            font-size: 30px;
+
+            color: #a78bfa;
+        }
+
+
+        /* ================= PHONE ================= */
+
+        .phone-section {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .phone-box {
+            min-height: 450px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5f0ff,
+                    #eafaff
+                );
+
+            border: 1px solid #e5e5e5;
+        }
+
+        .phone {
+            width: 180px;
+            height: 340px;
+
+            border-radius: 30px;
+
+            background: #111;
+
+            padding: 9px;
+
+            box-shadow:
+                0 30px 70px
+                rgba(0,0,0,0.2);
+        }
+
+        .phone-screen {
+            height: 100%;
+
+            border-radius: 23px;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #7048e8,
+                    #09a9d6
+                );
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            font-weight: bold;
+
+            padding: 20px;
+        }
+
+        .phone-info h2 {
+            font-size: 50px;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 20px;
+        }
+
+        .phone-info p {
+            color: #666;
+
+            line-height: 1.8;
+
+            font-size: 18px;
+        }
+
+
+        /* ================= COMPONENTS ================= */
+
+        .components {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(230px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+        .component {
+            padding: 35px;
+
+            border: 1px solid #eeeeee;
+
+            border-radius: 25px;
+
+            background: white;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.04);
+
+            transition: 0.3s;
+        }
+
+        .component:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.08);
+        }
+
+        .component h3 {
+            font-size: 22px;
+
+            margin-bottom: 14px;
+        }
+
+        .component p {
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= MISSION ================= */
+
+        .mission {
+            padding: 110px 8%;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    #e9deff,
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 15% 80%,
+                    #def8ff,
+                    transparent 32%
+                ),
+
+                #fafafa;
+
+            text-align: center;
+        }
+
+        .mission-inner {
+            max-width: 850px;
+
+            margin: auto;
+        }
+
+        .mission h2 {
+            font-size:
+                clamp(50px, 8vw, 90px);
+
+            letter-spacing: -5px;
+
+            margin-bottom: 20px;
+        }
+
+        .mission .tagline {
+            margin-bottom: 30px;
+        }
+
+        .mission p {
+            color: #666;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= FUTURE ================= */
+
+        .future-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(240px,1fr)
+                );
+
+            gap: 25px;
+        }
+
+        .future-card {
+            padding: 35px;
+
+            border-radius: 25px;
+
+            border: 1px solid #eeeeee;
+
+            background: white;
+        }
+
+        .future-card h3 {
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+        .future-card p {
+            color: #666;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            margin-top: 70px;
+
+            padding: 70px 40px;
+
+            border-radius: 35px;
+
+            background: #111111;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #aaa;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 45px;
+
+            text-align: center;
+
+            border-top: 1px solid #eeeeee;
+
+            color: #888;
+        }
+
+        footer strong {
+            color: #222;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 750px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 12px;
+            }
+
+            .phone-section {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-box {
+                padding: 35px;
+            }
+
+            .section {
+                padding: 80px 6%;
+            }
+
+            .hero h1 {
+                letter-spacing: -4px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        <img src="unbound_circle.png" alt="Unbound">
+    </div>
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="#problem">
+            Problem
+        </a>
+
+        <a href="#how">
+            How It Works
+        </a>
+
+        <a href="#motiva">
+            Motiva X1
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <img class="brand-logo" src="unbound_full_logo.png" alt="Unbound - Beyond Boundaries">
+
+        <div class="label">
+            UNBOUND • ASSISTIVE TECHNOLOGY
+        </div>
+
+        <h1>
+
+            Motiva
+
+            <span class="gradient">
+                X1
+            </span>
+
+        </h1>
+
+        <div class="tagline">
+            Beyond Limits, Into Motion.
+        </div>
+
+        <p>
+
+            A camera-based eye-control wheelchair
+            concept designed to translate a user's
+            eye movements into movement commands
+            for a wheelchair.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#how"
+                class="button"
+            >
+                See How It Works →
+            </a>
+
+            <a
+                href="#motiva"
+                class="button button-light"
+            >
+                Our Mission
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROBLEM ================= -->
+
+<section
+    class="section problem-section"
+    id="problem"
+>
+
+    <div class="section-label">
+        THE PROBLEM
+    </div>
+
+    <h2 class="section-title">
+        When controlling movement isn't easy.
+    </h2>
+
+    <p class="description">
+
+        People with severe physical disabilities
+        may have difficulty operating conventional
+        wheelchair controls.
+
+        Motiva X1 explores a different way of
+        interacting with a wheelchair: using
+        intentional eye movements as an input.
+
+    </p>
+
+
+    <div class="problem-grid">
+
+
+        <div class="problem-card">
+
+            <div class="icon">
+                ♿
+            </div>
+
+            <h3>
+                Mobility Challenges
+            </h3>
+
+            <p>
+
+                Some people may have very limited
+                control over their arms and hands,
+                making conventional controls
+                difficult to operate.
+
+            </p>
+
+        </div>
+
+
+        <div class="problem-card">
+
+            <div class="icon">
+                🖐️
+            </div>
+
+            <h3>
+                Traditional Controls
+            </h3>
+
+            <p>
+
+                A joystick or physical controller
+                may not be suitable for every
+                wheelchair user.
+
+            </p>
+
+        </div>
+
+
+        <div class="problem-card">
+
+            <div class="icon">
+                👁️
+            </div>
+
+            <h3>
+                A New Interface
+            </h3>
+
+            <p>
+
+                Motiva X1 investigates the possibility
+                of using eye movements as a natural
+                method of giving movement commands.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SOLUTION ================= -->
+
+<section class="section">
+
+    <div class="solution-box">
+
+        <div class="section-label">
+            THE SOLUTION
+        </div>
+
+        <h2>
+            Your eyes become the interface.
+        </h2>
+
+        <p>
+
+            Motiva X1 uses a smartphone camera
+            mounted on the wheelchair.
+
+            The user places the phone into a holder
+            and opens the Motiva X1 application.
+
+            The camera observes the user's face and
+            eyes, while the application analyzes
+            the eye movement and determines the
+            intended direction.
+
+            The resulting command is then sent
+            to the wheelchair's control system.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section
+    class="section flow-section"
+    id="how"
+>
+
+    <div class="section-label">
+        HOW IT WORKS
+    </div>
+
+    <h2 class="section-title">
+        From eye movement to motion.
+    </h2>
+
+    <p class="description">
+
+        Motiva X1 connects a smartphone camera,
+        software and an Arduino-based motor
+        control system into one concept.
+
+    </p>
+
+
+    <div class="flow">
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                01 • POSITION
+            </div>
+
+            <h3>
+                Phone Holder
+            </h3>
+
+            <p>
+
+                The smartphone is placed securely
+                into a holder positioned so that
+                the camera can observe the user.
+
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                02 • CAMERA
+            </div>
+
+            <h3>
+                Eye Detection
+            </h3>
+
+            <p>
+
+                The phone's camera captures the
+                user's face and eye movements.
+
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                03 • APP
+            </div>
+
+            <h3>
+                Motiva X1 App
+            </h3>
+
+            <p>
+
+                The application analyzes the camera
+                information and determines the
+                intended movement.
+
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                04 • COMMAND
+            </div>
+
+            <h3>
+                Send Direction
+            </h3>
+
+            <p>
+
+                The detected eye movement is
+                converted into a movement command
+                for the controller.
+
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                05 • ARDUINO
+            </div>
+
+            <h3>
+                Process
+            </h3>
+
+            <p>
+
+                The Arduino receives the command
+                and controls the wheelchair's
+                motor system.
+
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                06 • MOTION
+            </div>
+
+            <h3>
+                Move
+            </h3>
+
+            <p>
+
+                The motors respond to the command,
+                allowing the wheelchair to move
+                according to the detected input.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PHONE ================= -->
+
+<section class="section">
+
+    <div class="phone-section">
+
+
+        <div class="phone-box">
+
+            <div class="phone">
+
+                <div class="phone-screen">
+
+                    MOTIVA<br>
+                    X1<br><br>
+                    👁️<br><br>
+                    EYE CONTROL
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="phone-info">
+
+            <div class="section-label">
+                THE SMARTPHONE
+            </div>
+
+            <h2>
+                The phone is the eyes of Motiva X1.
+            </h2>
+
+            <p>
+
+                Instead of requiring a dedicated
+                camera system, Motiva X1 uses a
+                smartphone placed into a holder
+                attached to the wheelchair.
+
+                <br><br>
+
+                The phone runs the Motiva X1 app.
+                Its camera provides the visual input
+                required to interpret the user's
+                eye movements.
+
+                <br><br>
+
+                This approach is designed around
+                hardware that is already widely
+                available: a smartphone.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= COMPONENTS ================= -->
+
+<section class="section">
+
+    <div class="section-label">
+        SYSTEM COMPONENTS
+    </div>
+
+    <h2 class="section-title">
+        What makes up Motiva X1?
+    </h2>
+
+    <p class="description">
+
+        The concept combines software, a smartphone
+        and an electronic control system.
+
+    </p>
+
+
+    <div class="components">
+
+
+        <div class="component">
+
+            <div class="icon">
+                📱
+            </div>
+
+            <h3>
+                Smartphone
+            </h3>
+
+            <p>
+
+                Acts as the camera and runs the
+                Motiva X1 application.
+
+            </p>
+
+        </div>
+
+
+        <div class="component">
+
+            <div class="icon">
+                📷
+            </div>
+
+            <h3>
+                Camera
+            </h3>
+
+            <p>
+
+                Captures the user's face and
+                eye movements.
+
+            </p>
+
+        </div>
+
+
+        <div class="component">
+
+            <div class="icon">
+                🧠
+            </div>
+
+            <h3>
+                Motiva X1 App
+            </h3>
+
+            <p>
+
+                Processes the camera information
+                and determines the intended command.
+
+            </p>
+
+        </div>
+
+
+        <div class="component">
+
+            <div class="icon">
+                🔌
+            </div>
+
+            <h3>
+                Arduino
+            </h3>
+
+            <p>
+
+                Receives movement commands and
+                controls the motor system.
+
+            </p>
+
+        </div>
+
+
+        <div class="component">
+
+            <div class="icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Motors
+            </h3>
+
+            <p>
+
+                Produce the physical movement
+                of the wheelchair.
+
+            </p>
+
+        </div>
+
+
+        <div class="component">
+
+            <div class="icon">
+                ♿
+            </div>
+
+            <h3>
+                Wheelchair
+            </h3>
+
+            <p>
+
+                The complete platform that brings
+                the system together.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MOTIVA ================= -->
+
+<section
+    class="mission"
+    id="motiva"
+>
+
+    <div class="mission-inner">
+
+        <div class="section-label">
+            UNBOUND PRESENTS
+        </div>
+
+        <h2>
+            Motiva X1
+        </h2>
+
+        <div class="tagline">
+            Beyond Limits, Into Motion.
+        </div>
+
+        <p>
+
+            Motiva X1 is more than a wheelchair
+            control system.
+
+            <br><br>
+
+            It represents our vision of using
+            accessible technology to create
+            greater independence and freedom
+            of movement for people who may not
+            be able to use conventional controls.
+
+            <br><br>
+
+            By combining a smartphone camera,
+            intelligent software, Arduino and
+            motor control, Motiva X1 explores
+            a new way for people to interact
+            with mobility technology.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FUTURE ================= -->
+
+<section class="section">
+
+    <div class="section-label">
+        THE FUTURE
+    </div>
+
+    <h2 class="section-title">
+        Where Motiva X1 can go next.
+    </h2>
+
+    <p class="description">
+
+        Motiva X1 is a developing project.
+        Future development can focus on making
+        the system more accurate, reliable,
+        responsive and practical.
+
+    </p>
+
+
+    <div class="future-grid">
+
+
+        <div class="future-card">
+
+            <h3>
+                🎯 Better Accuracy
+            </h3>
+
+            <p>
+
+                Improve the application's ability
+                to recognize intentional eye
+                movements reliably.
+
+            </p>
+
+        </div>
+
+
+        <div class="future-card">
+
+            <h3>
+                ⚡ Faster Response
+            </h3>
+
+            <p>
+
+                Reduce the time between detecting
+                an eye movement and producing
+                the corresponding command.
+
+            </p>
+
+        </div>
+
+
+        <div class="future-card">
+
+            <h3>
+                🛡️ Safety
+            </h3>
+
+            <p>
+
+                Develop reliable stopping and
+                safety mechanisms before considering
+                real-world deployment.
+
+            </p>
+
+        </div>
+
+
+        <div class="future-card">
+
+            <h3>
+                📱 Better App
+            </h3>
+
+            <p>
+
+                Continue improving the smartphone
+                application and its user interface.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="cta">
+
+        <h2>
+            Beyond Boundaries.
+        </h2>
+
+        <p>
+            The vision behind Unbound.
+        </p>
+
+        <a
+            href="index.html"
+            class="button"
+        >
+            ← Back to Unbound
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <strong>
+        UNBOUND
+    </strong>
+
+    <br><br>
+
+    Beyond Boundaries.
+
+    <br><br>
+
+    <strong>
+        Motiva X1
+    </strong>
+
+    • Beyond Limits, Into Motion.
+
+    <br><br>
+
+    © 2026 Unbound
+
+</footer>
+
+
+</body>
+
+</html>
+```
